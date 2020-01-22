@@ -72,7 +72,7 @@ void printTrie_defult(struct Trie_Node *root, char *word, int lev)
     if (root->End_Word == true)
     {
         word[lev]=0;
-     printf("\n%s %d \n ", word, root->count);
+     printf("%s %d\n", word, root->count);
     }
     for (int p = 0; p < 26; p++)
     {
@@ -98,7 +98,7 @@ void printTrie_parameter(struct Trie_Node *root, char *word, int lev)
     if (root->End_Word == true)
     {
         word[lev]=0;
-     printf("\n%s %d \n ", word, root->count);
+     printf("%s %d\n", word, root->count);
     }
     for (int p = 25; p >=0; p--)
     {

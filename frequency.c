@@ -139,8 +139,10 @@ int main(int argc, char *argv[])
 
     while (letter != EOF)
     {
-        while ((letter != EOF && letter != '\t' && letter != '\n' && letter != ' '))
+        while ((letter != EOF && letter != '\t' && letter != '\n' && letter != ' ' )&&
+        ( ( letter>='a' && letter<='z') || (letter>='A' && letter<='Z') ) )
         {
+
             curr_word = realloc(curr_word, (index + 1) * sizeof(char));
             curr_word[index - 1] = letter;
             curr_word[index] = '\0';
@@ -177,16 +179,19 @@ int main(int argc, char *argv[])
     int lev3 = 0;
     if (argc == 1)
     {
+        printf("defult print: \n");
         printTrie_defult(trie2, temp_word, lev3);
     }
     else if (argc == 2)
     {
         if (strcmp(argv[1], "r") == 0)
         {
+            printf("\nparameter print: \n");
             printTrie_parameter(trie2, temp_word, lev2);
         }
     }
     free_trie(trie2);
+    //free(trie2);
     free(temp_word);
 
     return 0;
